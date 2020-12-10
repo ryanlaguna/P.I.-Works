@@ -1,12 +1,15 @@
+#include <iostream>
+using namespace std;
+
 int main()
 {
 	int num1;
 	int num2;
 
-	cout<<"Please give a number as 1st variable: " <<endl;
+	cout<<"Please give a number as 1st variable: ";
 	cin >> num1;
 
-	cout<<"Please give a number as 2nd variable: " <<endl;
+	cout<<"Please give a number as 2nd variable: ";
 	cin >> num2;
 
 	num1 = num1+num2;
