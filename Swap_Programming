@@ -1,0 +1,18 @@
+int main()
+{
+	int num1;
+	int num2;
+
+	cout<<"Please give a number as 1st variable: " <<endl;
+	cin >> num1;
+
+	cout<<"Please give a number as 2nd variable: " <<endl;
+	cin >> num2;
+
+	num1 = num1+num2;
+	num2 = num1-num2;
+	num1 = num1-num2;
+
+	cout<<"The value of the 1st variable: " << num1 <<endl;
+	cout<<"The value of the 2nd variable: " << num2 <<endl;
+}
