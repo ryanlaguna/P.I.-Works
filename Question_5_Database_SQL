@@ -4,7 +4,8 @@ FROM(SELECT i_users.username, i_users.emailaddress, COUNT(*) AS numberOfLogin
 	INNER JOIN i_user_login_logs ON i_users.userId = i_user_login_logs.userId
 	GROUP BY i_user_login_logs.userId) 
 WHERE numberOfLogin = (SELECT MAX(numberOfLogin) AS MostNumberOfLogin 
-	    			   FROM(SELECT i_users.username, i_users.emailaddress, COUNT(*) AS numberOfLogin
-	    			   		INNER JOIN i_user_login_logs ON i_users.userId = i_user_login_logs.userId
-							GROUP BY i_user_login_logs.userId)
-					   WHERE NOT i_users.username = "Administrator")
+	    	       FROM(SELECT i_users.username, i_users.emailaddress, COUNT(*) AS numberOfLogin
+		            FROM i_users
+		            INNER JOIN i_user_login_logs ON i_users.userId = i_user_login_logs.userId
+			    GROUP BY i_user_login_logs.userId)
+		       WHERE NOT i_users.username = "Administrator")
