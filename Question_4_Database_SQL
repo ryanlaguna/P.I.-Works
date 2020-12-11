@@ -1,4 +1,5 @@
 SELECT COUNT(*) AS NumberOfUsersLoggedInMoreThanThreeTimes
-FROM (SELECT * FROM i_users
-	INNER JOIN i_user_login ON i_users.userId = i_user_login.userId
-	GROUP BY i_user_login.userId HAVING COUNT(i_user_login.userId) > 3);
+FROM (SELECT * 
+      FROM i_users
+      INNER JOIN i_user_login ON i_users.userId = i_user_login.userId
+      GROUP BY i_user_login.userId HAVING COUNT(i_user_login.userId) > 3);
